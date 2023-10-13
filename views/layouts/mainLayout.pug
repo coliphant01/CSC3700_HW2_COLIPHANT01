@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title My App
+        link(href="/css/bootstrap.css", rel="stylesheet")
+        script(src="/js/bootstrap.js", type="application/javascript")
+
+    body
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
+            .container
+                a.navbar-brand(href='#')
+                    img(src='imgs/personality-perfect-logo.png' alt='My Logo' height='50')
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.ms-auto
+                        li.nav-item
+                            a.nav-link(href="/survey") Survey
+                        li.nav-item
+                            a.nav-link(href="/about") About
+
+        block content

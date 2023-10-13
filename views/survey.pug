@@ -1,0 +1,20 @@
+extends layouts/mainLayout
+
+block content
+    .container.mt-5
+        .row
+            .col-md-8.offset-md-2.border.p-4
+                h2 Personality Perfect
+                h4.mb-4 Interest Survey
+                form(method="post", action="/survey")
+                    each question in questions
+                        .form-group.row
+                            label.col-sm-8.col-form-label(for=question.id) #{question.q}
+                            .col-sm-4
+                                select.form-control(name=question.id)
+                                    option(value="0") A little
+                                    option(value="1") Sometimes
+                                    option(value="2") As much as possible
+                    .form-group.row
+                        .col-sm-12.text-center
+                            button.btn.btn-primary(type="submit") Submit Form

@@ -1,0 +1,27 @@
+extends layouts/mainLayout
+
+block content
+    .container.mt-5
+        h1.text-center Personality Perfect
+        h3.text-center.mb-4 Interest Survey Results
+
+        table.table.table-bordered
+            thead
+                tr
+                    th Personality Type
+                    th Total Points
+                    th Percent
+                    th Description
+            tbody
+                each category, index in categories
+                    - let totalPoints = points[index];
+                    - let percentVal = percent[index];
+                    - let bgColor = (percentVal >= 75) ? 'greenyellow' : (percentVal >= 50) ? 'yellow' : '#FFAA33';
+                    tr
+                        td(style=`background-color: ${bgColor};`) #{category.cat}
+                        td(style=`background-color: ${bgColor};`) #{totalPoints}
+                        td(style=`background-color: ${bgColor};`) #{percentVal}%
+                        td #{category.desc}
+
+        .text-center.mt-3
+            a.btn.btn-primary(href="/survey") Retake Survey
